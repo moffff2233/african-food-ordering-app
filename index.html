@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Food Ordering App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the African Food Ordering App</h1>
+    </header>
+    <main>
+        <section id="food-categories">
+            <h2>Food Categories</h2>
+            <ul>
+                <li>African Dishes</li>
+                <li>International Cuisine</li>
+                <li>Beverages</li>
+            </ul>
+        </section>
+        <section id="order-form">
+            <h2>Place Your Order</h2>
+            <form action="/submit_order" method="POST">
+                <label for="food-item">Select Food Item:</label>
+                <select id="food-item" name="food_item" required>
+                    <option value="">--Select an item--</option>
+                    <!-- Food items will be populated here -->
+                </select>
+                <label for="beverage">Select Beverage:</label>
+                <select id="beverage" name="beverage" required>
+                    <option value="">--Select a beverage--</option>
+                    <!-- Beverage items will be populated here -->
+                </select>
+                <button type="submit">Submit Order</button>
+            </form>
+        </section>
+        <section id="order-summary">
+            <h2>Order Summary</h2>
+            <div id="summary-details">
+                <!-- Order summary will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
